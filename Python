@@ -1,0 +1,31 @@
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print(f"{self.name} молчит.")
+
+    def show_info(self):
+        print(f"Это животное: {self.name}")
+
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)
+        self.breed = breed
+
+    def speak(self):
+        super().speak()
+        print(f"{self.name} говорит: Гав-гав!")
+
+    def wag_tail(self):
+        print(f"{self.name} виляет хвостом. Порода: {self.breed}")
+
+
+# Тестирование
+dog = Dog("Барсик", "овчарка")
+
+dog.show_info()   # метод базового класса
+dog.speak()       # переопределённый метод производного класса
+dog.wag_tail()    # метод производного класса
+
